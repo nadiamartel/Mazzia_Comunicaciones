@@ -1,11 +1,14 @@
 import style from "./App.module.css";
 import { links } from "./services/constants.js";
 import Link from "./components/Link/Link";
+import Nav from "./components/Nav/Nav";
 
 function App() {
   return (
     <>
-      <header></header>
+      <header>
+        <Nav></Nav>
+      </header>
 
       <section className={style.links}>
         <Link
