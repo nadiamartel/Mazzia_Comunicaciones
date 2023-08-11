@@ -1,13 +1,15 @@
 import style from "./App.module.css";
-import { links } from "./services/constants.js";
+import { links, sliders } from "./services/constants.js";
 import Link from "./components/Link/Link";
 import Nav from "./components/Nav/Nav";
+import Carousel from "./components/carousel/Carousel";
 
 function App() {
   return (
     <>
       <header>
-        <Nav></Nav>
+        <Nav />
+        <Carousel sliders={sliders} />
       </header>
 
       <section className={style.links}>
