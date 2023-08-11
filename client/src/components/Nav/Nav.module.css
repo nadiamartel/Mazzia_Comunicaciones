@@ -1,9 +1,13 @@
 .container {
-    background-color: #0F6E84;
+    background-color: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+}
+
+.logo{
+    max-width: 250px;
 }
 
 .links {
@@ -15,7 +19,10 @@
 .link {
     color: #FDFEFE;
     text-decoration: none;
-    transition: font-weight 0.3s ease;
+    transition: 0.3s ease;
+    font-size: large;
+    font-weight:600;
+    padding: 0 7px;
 }
 
 .link:visited {
@@ -23,5 +30,11 @@
 }
 
 .link:hover {
-    font-weight: bold;
+    text-decoration: underline;  
+    text-decoration-color: #3d5dac;
+    text-decoration-thickness: 3px;
+}
+
+.other_link:hover{
+    text-decoration-color: #cc2873;
 }
