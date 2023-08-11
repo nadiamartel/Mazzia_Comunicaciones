@@ -1,11 +1,12 @@
 import { NavLink } from "react-router-dom";
 import s from "./Nav.module.css";
+import logo from "../../assets/img/logo.webp";
 
-const Nav = () =>{
-    return(
+const Nav = () => {
+    return (
         <div className={s.container}>
             <section>
-               <h3>Logo</h3> 
+                <img src={logo} alt="logo" className={s.logo} />
             </section>
             <section className={s.links}>
                 <NavLink to="/planes" className={s.link}>
@@ -16,7 +17,7 @@ const Nav = () =>{
                     Servicios
                 </NavLink>
 
-                <NavLink to="/contacto" className={s.link}>
+                <NavLink to="/contacto" className={`${s.link} ${s.other_link}`}>
                     Contacto
                 </NavLink>
             </section>
