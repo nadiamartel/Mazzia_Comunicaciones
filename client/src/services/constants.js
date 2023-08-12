@@ -47,3 +47,18 @@ export const sliders = {
     url: "#",
   },
 };
+
+export const faq = {
+  faqA: {
+    question: "¿Pregunta frecuente 1?",
+    answer: "Esta es la respueste a la pregunta 1"
+  },
+  faqB: {
+    question: "¿Pregunta frecuente 2?",
+    answer: "Esta es la respueste a la pregunta 2"
+  },
+  faqC: {
+    question: "¿Pregunta frecuente 3?",
+    answer: "Esta es la respueste a la pregunta 3"
+  }
+}
