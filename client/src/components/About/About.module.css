@@ -1,0 +1,40 @@
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.logo {
+  max-height: 100px;
+  padding: 1rem;
+}
+
+.container p {
+  padding: 5px 0;
+  font-size: larger;
+}
+
+/* Tablet size */
+
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+  .container img {
+    max-height: 90px;
+  }
+}
+
+/* Mobile size */
+
+@media (max-width: 500px) {
+  .container img {
+    max-height: 70px;
+  }
+  .container p {
+    font-size: medium;
+  }
+}
