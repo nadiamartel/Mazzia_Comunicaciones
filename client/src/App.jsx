@@ -5,6 +5,8 @@ import Nav from "./components/Nav/Nav";
 import Carousel from "./components/carousel/Carousel";
 import FaqDropdown from "./components/FAQ_Dropdown/FaqDropdown";
 import Footer from "./components/Footer/Footer";
+import About from "./components/About/About";
+
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
           text={links.camaras.text}
         />
       </section>
+
+      <About/>
 
       <section className={style.faq}>
         <FaqDropdown question={faq.faqA.question} answer={faq.faqA.answer} />
