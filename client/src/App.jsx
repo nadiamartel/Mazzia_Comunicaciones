@@ -4,7 +4,9 @@ import Link from "./components/Link/Link";
 import Nav from "./components/Nav/Nav";
 import Carousel from "./components/carousel/Carousel";
 import FaqDropdown from "./components/FAQ_Dropdown/FaqDropdown";
+import Footer from "./components/Footer/Footer";
 import About from "./components/About/About";
+
 
 function App() {
   return (
@@ -32,21 +34,14 @@ function App() {
       <About/>
 
       <section className={style.faq}>
-        <FaqDropdown
-          question={faq.faqA.question}
-          answer={faq.faqA.answer}
-        />
-        <FaqDropdown
-          question={faq.faqB.question}
-          answer={faq.faqB.answer}
-        />
-        <FaqDropdown
-          question={faq.faqC.question}
-          answer={faq.faqC.answer}
-        />
+        <FaqDropdown question={faq.faqA.question} answer={faq.faqA.answer} />
+        <FaqDropdown question={faq.faqB.question} answer={faq.faqB.answer} />
+        <FaqDropdown question={faq.faqC.question} answer={faq.faqC.answer} />
       </section>
 
-      <footer></footer>
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 }
