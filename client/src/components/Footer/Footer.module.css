@@ -1,0 +1,159 @@
+.container {
+  margin-top: 10px;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+}
+
+.container p {
+  font-size: small;
+  font-weight: 100;
+  color: #fff;
+}
+
+.container h6 {
+  font-weight: 600;
+  color: #fff;
+}
+
+.tags {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: start;
+}
+
+.container p {
+  text-align: center;
+  margin: 0;
+}
+
+/*--------------------*/
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.social ul {
+  padding: 0;
+  display: flex;
+  list-style-type: none;
+}
+
+.social li svg {
+  max-height: 32px;
+  transition: all 0.5s ease;
+}
+
+.social li svg:hover {
+  transform: scale(1.1);
+}
+
+/*--------------------*/
+
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.links ul {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  /* flex-direction: column; */
+}
+
+.links a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.links a {
+  padding: 0 8px;
+  color: #bbb;
+  text-decoration: none;
+}
+
+/*--------------------*/
+
+.location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.location p {
+  font-weight: 400;
+  padding-top: 5px;
+}
+
+/* Tablet size */
+
+@media (max-width: 800px) {
+  .container h6 {
+    font-size: 14px;
+  }
+
+  .container p {
+    font-size: small;
+  }
+
+  .tags {
+    justify-content: space-around;
+  }
+
+  .social,
+  .links,
+  .location {
+    padding: 1rem 0;
+  }
+
+  .social li svg {
+    max-height: 25px;
+  }
+
+  .links a {
+    padding: 0 5px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile size */
+
+@media (max-width: 500px) {
+  .container p {
+    font-size: x-small;
+  }
+
+  .tags {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .social,
+  .links,
+  .location {
+    padding: 0.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .links ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .links a {
+    text-align: center;
+    padding: 10px 0;
+  }
+}
