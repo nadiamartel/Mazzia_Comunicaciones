@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blank {
+  background-color: #fff;
+}
+
+.table tr {
+  height: 5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.table td {
+  font-size: large;
+  padding: 0 2rem;
+}
+
+.plan_name {
+  font-weight: 700;
+  color: #fff;
+  background-color: #3d5dac;
+}
+
+.title {
+  font-weight: 600;
+}
+
+/* Tablet size */
+
+@media (max-width: 800px) {
+  .table td {
+    font-size: medium;
+    padding: 0 1rem;
+  }
+
+  .table svg {
+    max-height: 18px;
+  }
+}
+
+/* Mobile size */
+
+@media (max-width: 500px) {
+  .table td {
+    font-size: small;
+    padding: 0 0.5rem;
+  }
+
+  .title,
+  .blank {
+    display: none;
+  }
+
+  .table svg {
+    max-height: 1rem;
+  }
+}

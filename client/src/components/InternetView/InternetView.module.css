@@ -1,0 +1,54 @@
+.main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 8rem;
+  margin-bottom: 1rem;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container button {
+  margin: 2rem 0;
+  width: 30%;
+}
+
+.container button:hover {
+  background-color: #3d5dac;
+  color: #fff;
+}
+
+/* Tablet size */
+
+@media (max-width: 800px) {
+}
+
+/* Mobile size */
+
+@media (max-width: 500px) {
+  .main {
+    margin: 0 1rem;
+  }
+
+  .main h2 {
+    font-size: large;
+  }
+
+  .main p {
+    font-size: small;
+  }
+}
