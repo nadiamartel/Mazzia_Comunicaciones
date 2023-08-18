@@ -2,9 +2,9 @@ import internetSvg from "../assets/wifi.svg";
 import securityAlarmSvg from "../assets/security-alarm.svg";
 import securityCamSvg from "../assets/security-cam.svg";
 import shielCheckSvg from "../assets/shield-check.svg";
-import slider1 from "../assets/sliderExample1.webp";
-import slider2 from "../assets/sliderExample2.webp";
-import slider3 from "../assets/sliderExample3.webp";
+import slider1 from "../assets/img/slider1.webp";
+import slider2 from "../assets/img/slider2.webp";
+import slider3 from "../assets/img/slider3.webp";
 
 export const links = {
   internet: {
