@@ -1,7 +1,8 @@
+import { Route, Routes } from "react-router-dom"; 
 import Nav from "./components/Nav/Nav";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
-import { Route, Routes } from "react-router-dom";
+import InternetView from "./components/InternetView/InternetView";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/planes" element={<InternetView/>}/>
       </Routes>
       <Footer />
     </>

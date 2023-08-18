@@ -5,9 +5,9 @@ import logo from "../../assets/img/logo.webp";
 const Nav = () => {
     return (
         <div className={s.container}>
-            <section>
+            <a href="/">
                 <img src={logo} alt="logo" className={s.logo} />
-            </section>
+            </a>
             <section className={s.links}>
                 <NavLink to="/planes" className={s.link}>
                     Planes de Internet
