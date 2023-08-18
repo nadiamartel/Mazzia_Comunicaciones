@@ -1,40 +1,55 @@
 .container {
-    background-color: black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+  position: sticky;
+  top: 0.1px;
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid rgba(61, 93, 172, 0.5);
+  z-index: 10;
 }
 
-.logo{
-    max-width: 250px;
+.logo {
+  max-width: 200px;
 }
 
 .links {
-    display: flex;
-    gap: 20px;
-    margin-left: auto;
+  display: flex;
+  gap: 20px;
+  margin-left: auto;
 }
 
 .link {
-    color: #FDFEFE;
-    text-decoration: none;
-    transition: 0.3s ease;
-    font-size: large;
-    font-weight:600;
-    padding: 0 7px;
+  color: #fdfefe;
+  text-decoration: none;
+  transition: 0.3s ease;
+  font-size: large;
+  font-weight: 600;
+  padding: 0 7px;
 }
 
 .link:visited {
-    color: #FDFEFE;
+  color: #fdfefe;
 }
 
 .link:hover {
-    text-decoration: underline;  
-    text-decoration-color: #3d5dac;
-    text-decoration-thickness: 3px;
+  text-decoration: underline;
+  text-decoration-color: #3d5dac;
+  text-decoration-thickness: 3px;
 }
 
-.other_link:hover{
-    text-decoration-color: #cc2873;
+.other_link:hover {
+  text-decoration-color: #cc2873;
+}
+
+/* Mobile size*/
+
+@media (max-width: 600px) {
+  .logo {
+    max-width: 130px;
+  }
+  .container {
+    padding: 10px;
+  }
 }
