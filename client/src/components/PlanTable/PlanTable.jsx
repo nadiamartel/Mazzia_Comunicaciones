@@ -1,6 +1,17 @@
+import { useEffect, useState } from "react";
 import s from "./PlanTable.module.css";
 
 const PlanTable = () => {
+  const [planes, setPlanes] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3001/planes/all")
+      .then((res) => res.json())
+      .then((res) => setPlanes(res))
+      .catch((err) => console.log(err));
+    console.log(planes);
+  }, []);
+  
   return (
     <>
       <section className={s.container}>
@@ -8,34 +19,33 @@ const PlanTable = () => {
           <tr>
             <td className={s.blank}>&nbsp;</td>
 
-            <td className={s.plan_name}>Plan 5</td>
-            <td className={s.plan_name}>Plan 7</td>
-            <td className={s.plan_name}>Plan 10</td>
-            <td className={s.plan_name}>Plan 12</td>
-            <td className={s.plan_name}>Plan 15</td>
+            <td className={s.plan_name}>{planes[0]?.name}</td>
+            <td className={s.plan_name}>{planes[1]?.name}</td>
+            <td className={s.plan_name}>{planes[2]?.name}</td>
+            <td className={s.plan_name}>{planes[3]?.name}</td>
+            <td className={s.plan_name}>{planes[4]?.name}</td>
           </tr>
 
           <tr>
             <td className={s.title}>Precio</td>
 
-            <td>3.800 ARS</td>
-            <td>3.800 ARS</td>
-            <td>4.200 ARS</td>
-            <td>6.200 ARS</td>
-            <td>7.500 ARS</td>
+            <td>{planes[0]?.price} ARS</td>
+            <td>{planes[1]?.price} ARS</td>
+            <td>{planes[2]?.price} ARS</td>
+            <td>{planes[3]?.price} ARS</td>
+            <td>{planes[4]?.price} ARS</td>
           </tr>
           <tr>
             <td className={s.title}>Velocidad</td>
 
-            <td>5 MB</td>
-            <td>7 MB</td>
-            <td>10 MB</td>
-            <td>12 MB</td>
-            <td>15 MB</td>
+            <td>{planes[0]?.speed}</td>
+            <td>{planes[1]?.speed}</td>
+            <td>{planes[2]?.speed}</td>
+            <td>{planes[3]?.speed}</td>
+            <td>{planes[4]?.speed}</td>
           </tr>
           <tr>
             <td className={s.title}>Todos los medios de pago</td>
-
             <td>
               <svg
                 width="24px"
