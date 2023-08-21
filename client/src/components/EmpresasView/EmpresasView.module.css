@@ -1,0 +1,44 @@
+.container {
+    min-height: 100vh;
+}
+
+.header {
+  background: url("../../assets/img/empresasImeges.webp") no-repeat fixed center center;
+  min-height: 20rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.textos {
+    background-color: rgba(255, 255, 255, .3);
+    backdrop-filter: blur(3px);
+    max-width: 500px;
+    padding: 2rem;
+    border-radius: 13px 0 0 13px;
+}
+
+.textos h6,
+.textos p {
+    color: #000;
+}
+
+@media (max-width: 650px){
+    .header {
+        justify-content: center;
+    }
+
+    .textos {
+        max-width: 350px;
+        border-radius: 13px;
+        padding: 1rem;
+    }
+
+    .textos h3 {
+        font-size: large;
+    }
+
+    .textos p {
+        font-size: small;
+    }
+}
