@@ -2,13 +2,14 @@ import internetSvg from "../assets/wifi.svg";
 import securityAlarmSvg from "../assets/security-alarm.svg";
 import securityCamSvg from "../assets/security-cam.svg";
 import shielCheckSvg from "../assets/shield-check.svg";
+import empresasSvg from "../assets/company.svg";
 import slider1 from "../assets/img/slider1.webp";
 import slider2 from "../assets/img/slider2.webp";
 import slider3 from "../assets/img/slider3.webp";
 
 export const links = {
   internet: {
-    url: "#",
+    url: "/planes",
     icon: internetSvg,
     title: "Internet",
     text: "Max 3 palabras",
@@ -29,6 +30,12 @@ export const links = {
     url: "#",
     icon: shielCheckSvg,
     title: "Seguridad",
+    text: "Max 3 palabras",
+  },
+  empresas: {
+    url: "/empresas",
+    icon: empresasSvg,
+    title: "Empresas",
     text: "Max 3 palabras",
   },
 };
