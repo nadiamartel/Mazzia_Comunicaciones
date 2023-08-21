@@ -25,6 +25,12 @@ const Home = () => {
           title={links.camaras.title}
           text={links.camaras.text}
         />
+        <Link
+          url={links.empresas.url}
+          icon={links.empresas.icon}
+          title={links.empresas.title}
+          text={links.empresas.text}
+        />
       </section>
 
       <About />
