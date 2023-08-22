@@ -3,7 +3,7 @@
 }
 
 .header {
-  background: url("../../assets/img/empresasImeges.webp") no-repeat fixed center center;
+  background: url("../../assets/img/empresas_banner.webp") no-repeat;
   min-height: 20rem;
   display: flex;
   justify-content: flex-end;
@@ -18,9 +18,9 @@
     border-radius: 13px 0 0 13px;
 }
 
-.textos h6,
+.textos h3,
 .textos p {
-    color: #000;
+    color: #fff;
 }
 
 @media (max-width: 650px){
