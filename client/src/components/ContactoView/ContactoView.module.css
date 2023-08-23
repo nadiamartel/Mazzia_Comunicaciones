@@ -1,0 +1,110 @@
+.container {
+  min-height: 100vh;
+}
+
+.header {
+  background: url("../../assets/img/contacto_banner.webp") no-repeat;
+  min-height: 20rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.textos {
+  border: 1px solid #fff;
+  backdrop-filter: blur(10px);
+  max-width: 500px;
+  border-radius: 13px 0 0 13px;
+  padding: 2rem;
+}
+
+.header h3,
+.header p {
+  color: #fff;
+}
+
+.content,
+.social,
+.ubicacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.telefonos,
+.social,
+.ubicacion {
+  margin: 2rem 0;
+}
+
+.telefonos {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section {
+  text-align: center;
+  width: 100%;
+}
+
+.social svg {
+  margin: 1rem 2rem;
+}
+
+.ubicacion,
+.ubicacion iframe {
+  width: 100%;
+}
+
+.ubicacion iframe {
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+@media (max-width: 650px) {
+  .header {
+    justify-content: center;
+  }
+
+  .textos {
+    max-width: 350px;
+    border-radius: 13px;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .textos h3 {
+    font-size: large;
+  }
+
+  .textos p {
+    font-size: small;
+  }
+
+  .telefonos {
+    flex-direction: column;
+  }
+
+  .telefonos h5 {
+    font-size: medium;
+  }
+
+  .telefonos p {
+    font-size: small;
+  }
+
+  .social svg {
+    max-height: 34px;
+    margin: 0.5rem 1rem;
+  }
+
+  .telefonos,
+  .social,
+  .ubicacion {
+    margin: 1rem 0;
+  }
+}
