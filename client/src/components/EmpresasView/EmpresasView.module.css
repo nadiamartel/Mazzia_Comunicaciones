@@ -1,5 +1,5 @@
 .container {
-    min-height: 100vh;
+  min-height: 100vh;
 }
 
 .header {
@@ -11,34 +11,35 @@
 }
 
 .textos {
-    background-color: rgba(255, 255, 255, .3);
-    backdrop-filter: blur(3px);
-    max-width: 500px;
-    padding: 2rem;
-    border-radius: 13px 0 0 13px;
+  border: 1px solid #fff;
+  backdrop-filter: blur(10px);
+  max-width: 500px;
+  padding: 2rem;
+  border-radius: 13px 0 0 13px;
 }
 
 .textos h3,
 .textos p {
-    color: #fff;
+  color: #fff;
 }
 
-@media (max-width: 650px){
-    .header {
-        justify-content: center;
-    }
+@media (max-width: 650px) {
+  .header {
+    justify-content: center;
+  }
 
-    .textos {
-        max-width: 350px;
-        border-radius: 13px;
-        padding: 1rem;
-    }
+  .textos {
+    max-width: 350px;
+    border-radius: 13px;
+    padding: 1rem;
+    text-align: center;
+  }
 
-    .textos h3 {
-        font-size: large;
-    }
+  .textos h3 {
+    font-size: large;
+  }
 
-    .textos p {
-        font-size: small;
-    }
+  .textos p {
+    font-size: small;
+  }
 }
