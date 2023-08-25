@@ -27,6 +27,8 @@ const corsOptions = {origin: '*',}
 
 server.use(cors(corsOptions));
 
+server.disable('x-powered-by');
+
 server.use('/', routes);
 
 // Error catching endware.
@@ -36,5 +38,9 @@ server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
   console.error(err);
   res.status(status).send(message);
 });
+
+server.use((req, res) => {
+  res.status(404).send('<h1>Route not Found</h1>')
+})
 
 module.exports = server;
