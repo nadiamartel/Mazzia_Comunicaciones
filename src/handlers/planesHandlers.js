@@ -1,7 +1,11 @@
-const { validatePlan } = require("../controllers/planesControllers/planSchema");
+const {
+  validatePlan,
+  validateUpdatePlan,
+} = require("../controllers/planesControllers/planSchema");
 const { allPlans } = require("../controllers/planesControllers/getAllPlanes");
 const getPlanById = require("../controllers/planesControllers/getPlanById");
 const postPlan = require("../controllers/planesControllers/postPlan");
+const patchPlan = require("../controllers/planesControllers/patchPlan");
 
 const createPlan = async (req, res) => {
   try {
@@ -40,7 +44,23 @@ const getPlan = async (req, res) => {
 
 const updatePlan = async (req, res) => {
   try {
-  } catch (error) {}
+    const valitation = validateUpdatePlan(req.body);
+
+    if(!valitation.success){
+      return res.status(400).json({ message: valitation.error.issues[0].message})
+    }
+
+    const { id } = req.params;
+    const planUpdated = await patchPlan(id, valitation.data);
+
+    if(typeof planUpdated === "string"){
+      return res.status(404).json({ message: planUpdated})
+    }
+    
+    res.status(200).json(planUpdated)
+  } catch (error) {
+    res.status(500).json({ error: error });
+  }
 };
 
 const getAllplans = async (req, res) => {

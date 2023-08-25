@@ -10,7 +10,7 @@ const {
 planesRouter
   .post("/", createPlan)
   .get("/:id", getPlan)
-  .put("/:id", updatePlan)
+  .patch("/:id", updatePlan)
   .get("/", getAllplans);
 
 module.exports = planesRouter;

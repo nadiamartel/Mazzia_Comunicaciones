@@ -20,6 +20,11 @@ const validatePlan = (input) => {
     return planSchema.safeParse(input)
 }
 
+const validateUpdatePlan = (input) => {
+    return planSchema.partial().safeParse(input)
+}
+
 module.exports = {
-    validatePlan
+    validatePlan,
+    validateUpdatePlan
 }
