@@ -1,6 +1,7 @@
 const {
   validateConsulta,
 } = require("../controllers/consultasControllers/consultasSchema");
+const deleteConsulta = require("../controllers/consultasControllers/deleteConsulta");
 const getAllConsultas = require("../controllers/consultasControllers/getAllConsultas");
 const postConsulta = require("../controllers/consultasControllers/postConsulta");
 
@@ -38,7 +39,18 @@ const getConsultas = async (req, res) => {
 
 const deleteConsultas = async (req, res) => {
   try {
-  } catch (error) {}
+    const { id } = req.params;
+
+    const consultaDeleted = await deleteConsulta(id);
+
+    if (typeof consultaDeleted === "string") {
+      return res.status(404).json({ message: consultaDeleted });
+    }
+
+    res.status(200).json(consultaDeleted);
+  } catch (error) {
+    res.status(500).json({ error: error });
+  }
 };
 
 module.exports = {
