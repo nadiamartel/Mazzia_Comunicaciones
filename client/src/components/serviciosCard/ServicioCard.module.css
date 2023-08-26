@@ -1,0 +1,49 @@
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+  opacity: 0;
+  transform: translateX(-500px);
+  transition: opacity 2s, transform 2s;
+}
+
+.card.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.textos p {
+  color: #555;
+  max-width: 500px;
+}
+
+.img {
+  max-height: 300px;
+  max-width: 400px;
+}
+
+@media (max-width: 650px) {
+  .card {
+    flex-direction: column;
+    border-bottom: 1px solid #ccc;
+    padding: 2rem 0;
+  }
+
+  .textos h4 {
+    font-size: large;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .textos p {
+    font-size: small;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .img {
+    max-height: 200px;
+    max-width: 300px;
+  }
+}
