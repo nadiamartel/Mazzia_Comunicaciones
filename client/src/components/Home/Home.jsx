@@ -1,9 +1,10 @@
 import s from "./Home.module.css";
 import Carousel from "../carousel/Carousel";
-import { sliders, links, faq } from "../../services/constants";
+import { sliders, links, faq, servicesCards } from "../../services/constants";
 import Link from "../Link/Link";
 import About from "../About/About";
 import FaqDropdown from "../FAQ_Dropdown/FaqDropdown";
+import ServicioCard from "../serviciosCard/servicioCard";
 
 const Home = () => {
   return (
@@ -34,6 +35,12 @@ const Home = () => {
       </section>
 
       <About />
+
+      <section>
+        {servicesCards.map((card, index) => {
+          return <ServicioCard card={card} index={index} />;
+        })}
+      </section>
 
       <section className={s.faq}>
         <FaqDropdown question={faq.faqA.question} answer={faq.faqA.answer} />
