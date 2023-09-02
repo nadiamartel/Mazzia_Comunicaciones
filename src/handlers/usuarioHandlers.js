@@ -5,6 +5,7 @@ const {
 const postUsuario = require("../controllers/usuarioControllers/postUsuario");
 const getUsuarioById = require("../controllers/usuarioControllers/getUsuarioById");
 const patchUsuario = require("../controllers/usuarioControllers/patchUsuario");
+const validateLogin = require("../controllers/usuarioControllers/validateLogin");
 
 const createUsuario = async (req, res) => {
   try {
@@ -66,8 +67,24 @@ const updateUsuario = async (req, res) => {
   }
 };
 
+const loginHandler = async (req, res) => {
+  try {
+      const { email, password } = req.body;
+
+      const validation = await validateLogin(email, password);
+      if(typeof validation === "string"){
+        return res.status(401).json({access: false, message: validation})
+      }
+
+      res.status(200).json(validation)
+  } catch (error) {
+      res.status(500).json({ error: error})
+  }
+};
+
 module.exports = {
   createUsuario,
   getUsuario,
   updateUsuario,
+  loginHandler
 };
