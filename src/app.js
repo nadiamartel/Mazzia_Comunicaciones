@@ -3,7 +3,8 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 // const morgan = require('morgan');
 const routes = require('./routes/index');
-const cors = require('cors')
+const cors = require('cors');
+const notFound = require('./middlewares/notFound');
 
 require('./db.js');
 
@@ -39,8 +40,6 @@ server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
   res.status(status).send(message);
 });
 
-server.use((req, res) => {
-  res.status(404).send('<h1>Route not Found</h1>')
-})
+server.use(notFound)
 
 module.exports = server;
