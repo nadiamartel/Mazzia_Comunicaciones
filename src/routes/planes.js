@@ -6,11 +6,12 @@ const {
   updatePlan,
   getAllplans,
 } = require("../handlers/planesHandlers");
+const userAuth = require("../middlewares/userAuth");
 
 planesRouter
-  .post("/", createPlan)
+  .post("/", userAuth, createPlan)
   .get("/:id", getPlan)
-  .patch("/:id", updatePlan)
+  .patch("/:id", userAuth, updatePlan)
   .get("/", getAllplans);
 
 module.exports = planesRouter;

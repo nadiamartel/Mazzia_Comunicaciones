@@ -32,8 +32,8 @@ const createUsuario = async (req, res) => {
 
 const getUsuario = async (req, res) => {
   try {
-    const { id } = req.params;
-    const usuarioFound = await getUsuarioById(id);
+    const { userId } = req.body;
+    const usuarioFound = await getUsuarioById(userId);
 
     if (typeof usuarioFound === "string") {
       return res.status(404).json({ message: usuarioFound });
@@ -54,8 +54,8 @@ const updateUsuario = async (req, res) => {
         .json({ error: validation.error.issues[0].message });
     }
 
-    const { id } = req.params;
-    const usuarioUpdated = await patchUsuario(id, validation.data);
+    const { userId } = req.body;
+    const usuarioUpdated = await patchUsuario(userId, validation.data);
 
     if (typeof usuarioUpdated === "string") {
       return res.status(404).json({ error: usuarioUpdated });
@@ -69,16 +69,16 @@ const updateUsuario = async (req, res) => {
 
 const loginHandler = async (req, res) => {
   try {
-      const { email, password } = req.body;
+    const { email, password } = req.body;
 
-      const validation = await validateLogin(email, password);
-      if(typeof validation === "string"){
-        return res.status(401).json({access: false, message: validation})
-      }
+    const validation = await validateLogin(email, password);
+    if (typeof validation === "string") {
+      return res.status(401).json({ access: false, message: validation });
+    }
 
-      res.status(200).json(validation)
+    res.status(200).json(validation);
   } catch (error) {
-      res.status(500).json({ error: error})
+    res.status(500).json({ error: error });
   }
 };
 
@@ -86,5 +86,5 @@ module.exports = {
   createUsuario,
   getUsuario,
   updateUsuario,
-  loginHandler
+  loginHandler,
 };
