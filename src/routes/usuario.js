@@ -6,11 +6,12 @@ const {
   createUsuario,
   loginHandler,
 } = require("../handlers/usuarioHandlers");
+const userAuth = require("../middlewares/userAuth");
 
 usuarioRouter
   .post("/", createUsuario)
-  .get("/:id", getUsuario)
-  .patch("/:id", updateUsuario)
-  .get("/", loginHandler);
+  .get("/", userAuth, getUsuario)
+  .patch("/", userAuth, updateUsuario)
+  .get("/login", loginHandler);
 
 module.exports = usuarioRouter;
