@@ -12,6 +12,6 @@ usuarioRouter
   .post("/", createUsuario)
   .get("/", userAuth, getUsuario)
   .patch("/", userAuth, updateUsuario)
-  .get("/login", loginHandler);
+  .post("/login", loginHandler);
 
 module.exports = usuarioRouter;
