@@ -10,6 +10,8 @@ import camaraCard from "../assets/img/camara.webp";
 import tabletCard from "../assets/img/tablet.png";
 import alarmaCard from "../assets/img/alarma.jpg";
 
+export const SERVER_URI = "http://localhost:3001";
+
 export const links = {
   internet: {
     url: "/planes",
