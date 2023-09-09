@@ -1,7 +1,9 @@
 import { useState } from "react";
+import PlanesData from "../dataComponents/planesData";
+import ConsultasData from "../dataComponents/ConsultasData";
 
 const AdminPanel = () => {
-  const [dataToShow, setDataToShow] = useState("consultas");
+  const [dataToShow, setDataToShow] = useState("perfil");
 
   return (
     <>
@@ -9,13 +11,13 @@ const AdminPanel = () => {
         <ul>
           <li onClick={() => setDataToShow("planes")}>Planes</li>
           <li onClick={() => setDataToShow("consultas")}>Consultas</li>
-          <li onClick={() => setDataToShow("usuarios")}>Usuarios</li>
+          <li onClick={() => setDataToShow("usuarios")}>perfil</li>
         </ul>
       </nav>
 
-      {dataToShow === "planes" && <section>todos los planes</section>}
-      {dataToShow === "consultas" && <section>todos las Consultas</section>}
-      {dataToShow === "usuarios" && <section>todos los Usuarios</section>}
+      {dataToShow === "planes" && <PlanesData />}
+      {dataToShow === "consultas" && <ConsultasData />}
+      {dataToShow === "perfil" && <section>Admin Data</section>}
     </>
   );
 };
