@@ -1,6 +1,14 @@
+import { useEffect, useState } from "react";
 import s from "./Footer.module.css";
 
 const Footer = () => {
+  const [showAccess, setShowAccess] = useState(false);
+
+  useEffect(() => {
+    const admin = JSON.parse(window.localStorage.getItem("session"));
+    admin?.token ? setShowAccess(true) : null;
+  }, []);
+
   return (
     <footer className={s.container}>
       <section className={s.tags}>
@@ -119,6 +127,7 @@ const Footer = () => {
             <li>
               <a href="/empresas">EMPRESAS</a>
             </li>
+            {showAccess ? <a href="/admin">ADMIN</a> : null}
           </ul>
         </div>
         <div className={s.location}>
