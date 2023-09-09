@@ -1,7 +1,10 @@
 import s from "./InternetView.module.css";
 import PlanTable from "../PlanTable/PlanTable";
+import { useNavigate } from "react-router-dom";
 
 const InternetView = () => {
+  const navigate = useNavigate();
+
   return (
     <section className={s.main}>
       <header>
@@ -11,7 +14,7 @@ const InternetView = () => {
       <div className={s.container}>
         <PlanTable />
 
-        <button>Siguiente</button>
+        <button onClick={() => navigate("/contacto")}>Siguiente</button>
       </div>
     </section>
   );
