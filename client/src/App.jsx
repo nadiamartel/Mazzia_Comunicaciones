@@ -6,6 +6,7 @@ import InternetView from "./components/InternetView/InternetView";
 import EmpresasView from "./components/EmpresasView/EmpresasView";
 import ContactoView from "./components/ContactoView/ContactoView";
 import Login from "./components/Login/Login";
+import AdminPanel from "./components/AdminPanel/AdminPanel";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/planes" element={<InternetView />} />
         <Route path="/empresas" element={<EmpresasView />} />
         <Route path="/contacto" element={<ContactoView />} />
+        <Route path="/admin" element={<AdminPanel/>}/>
         <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />
