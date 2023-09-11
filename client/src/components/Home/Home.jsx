@@ -36,7 +36,7 @@ const Home = () => {
 
       <About />
 
-      <section>
+      <section id="servicios">
         {servicesCards.map((card, index) => {
           return <ServicioCard card={card} index={index} />;
         })}
