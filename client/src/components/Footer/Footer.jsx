@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import s from "./Footer.module.css";
+import { useLocation } from "react-router-dom";
 
 const Footer = () => {
+  const location = useLocation().pathname;
   const [showAccess, setShowAccess] = useState(false);
 
   useEffect(() => {
@@ -119,7 +121,7 @@ const Footer = () => {
               <a href="/planes">PLANES</a>
             </li>
             <li>
-              <a href="/servicios">SERVICIOS</a>
+              <a href={location === "/" ? "#servicios" : "/"}>SERVICIOS</a>
             </li>
             <li>
               <a href="/contacto">CONTACTO</a>

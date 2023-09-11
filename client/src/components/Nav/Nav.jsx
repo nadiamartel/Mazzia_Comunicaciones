@@ -1,8 +1,10 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import s from "./Nav.module.css";
 import logo from "../../assets/img/logo.webp";
 
 const Nav = () => {
+  const location = useLocation().pathname;
+
   return (
     <div className={s.container}>
       <a href="/">
@@ -14,9 +16,9 @@ const Nav = () => {
             Planes
           </NavLink>
 
-          <NavLink to="/servicios" className={s.link}>
+          <a href={location === "/" ? "#servicios" : "/"} className={s.link}>
             Servicios
-          </NavLink>
+          </a>
 
           <NavLink to="/contacto" className={`${s.link} ${s.other_link}`}>
             Contacto
