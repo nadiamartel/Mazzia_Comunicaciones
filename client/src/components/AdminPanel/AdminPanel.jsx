@@ -1,10 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import PlanesData from "../dataComponents/planesData";
 import ConsultasData from "../dataComponents/ConsultasData";
 import s from "./AdminPanel.module.css";
 
 const AdminPanel = () => {
+  const navigate = useNavigate();
   const [dataToShow, setDataToShow] = useState("perfil");
+
+  useEffect(() => {
+    const auth = JSON.parse(window.localStorage.getItem("session"));
+
+    !auth?.token ? navigate("/") : null;
+  }, []);
 
   return (
     <div className={s.container}>
