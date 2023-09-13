@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import DataCard from "./DataCard";
 
 const PlanesData = () => {
   const [planes, setPlanes] = useState([]);
@@ -14,13 +15,14 @@ const PlanesData = () => {
     <>
       {planes?.map((plan) => {
         return (
-          <div>
-            <h4>Nombre: {plan?.name}</h4>
-            <p>id: {plan?.id}</p>
-            <h6>Precio: {plan?.price}</h6>
-            <h6>Valocidad: {plan?.speed}</h6>
-            <h6>Detalle: {plan?.detail}</h6>
-          </div>
+          <DataCard
+            key={plan.id}
+            id={plan.id}
+            name={plan.name}
+            price={plan.price}
+            speed={plan.speed}
+            detail={plan.detail}
+          />
         );
       })}
     </>

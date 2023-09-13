@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import DataCard from "./DataCard";
 
 const ConsultasData = () => {
   const [consultas, setConsultas] = useState([]);
@@ -14,13 +15,14 @@ const ConsultasData = () => {
     <>
       {consultas?.map((consulta) => {
         return (
-          <div>
-            <h4>Nombre: {consulta?.name}</h4>
-            <p>id: {consulta?.id}</p>
-            <h6>Telefono: {consulta?.phone}</h6>
-            <h6>Email: {consulta?.email}</h6>
-            <h6>Mensaje: {consulta?.message}</h6>
-          </div>
+          <DataCard
+            key={consulta.id}
+            id={consulta.id}
+            name={consulta.name}
+            phone={consulta.phone}
+            email={consulta.email}
+            message={consulta.message}
+          />
         );
       })}
     </>
