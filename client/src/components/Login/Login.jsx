@@ -30,7 +30,7 @@ const login = () => {
           token: response.token,
         })
       );
-      navigate("/");
+      navigate("/admin");
       return;
     }
 
