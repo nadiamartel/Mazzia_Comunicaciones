@@ -13,18 +13,22 @@ const PlanesData = () => {
 
   return (
     <>
-      {planes?.map((plan) => {
-        return (
-          <DataCard
-            key={plan.id}
-            id={plan.id}
-            name={plan.name}
-            price={plan.price}
-            speed={plan.speed}
-            detail={plan.detail}
-          />
-        );
-      })}
+      {planes.length !== 0 ? (
+        planes?.map((plan) => {
+          return (
+            <DataCard
+              key={plan.id}
+              id={plan.id}
+              name={plan.name}
+              price={plan.price}
+              speed={plan.speed}
+              detail={plan.detail}
+            />
+          );
+        })
+      ) : (
+        <h2> No hay planes </h2>
+      )}
     </>
   );
 };

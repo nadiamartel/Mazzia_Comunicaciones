@@ -1,6 +1,7 @@
 import { useState } from "react";
 import s from "./DataCard.module.css";
 import patchPlan from "./patchPlan";
+import deleteConsulta from "./deleteConsulta";
 
 const DataCard = ({
   id,
@@ -29,10 +30,24 @@ const DataCard = ({
 
     if (response?.name) {
       alert(`Se ha actualizado el plan con id:${id}`);
+      window.location.reload();
+      return;
     }
 
+    alert(response.error);
     // setInfoToPatch({});
-    window.location.reload();
+  };
+
+  const handleDeleteConsulta = async (id) => {
+    const response = await deleteConsulta(id);
+
+    if (response?.name) {
+      alert(`La consulta con id: ${id}, se ha eliminado correctamente`);
+      window.location.reload();
+      return;
+    }
+
+    alert(response.error);
   };
 
   return (
@@ -44,7 +59,9 @@ const DataCard = ({
       <h6>{detail ? `Detalle: ${detail}` : `Mensaje: ${message}`}</h6>
       {price ? (
         <button onClick={() => setShowModal(!showMoldal)}>Editar</button>
-      ) : null}
+      ) : (
+        <button onClick={() => handleDeleteConsulta(id)}>Eliminar</button>
+      )}
 
       <>
         {showMoldal ? (
