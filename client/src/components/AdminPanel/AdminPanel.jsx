@@ -1,8 +1,12 @@
-import { useEffect, useState } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import PlanesData from "../dataComponents/planesData";
-import ConsultasData from "../dataComponents/ConsultasData";
+import Loader from "../loader/Loader";
+// import PlanesData from "../dataComponents/planesData";
+// import ConsultasData from "../dataComponents/ConsultasData";
 import s from "./AdminPanel.module.css";
+
+const PlanesData = lazy(() => import("../dataComponents/planesData"));
+const ConsultasData = lazy(() => import("../dataComponents/ConsultasData"));
 
 const AdminPanel = () => {
   const navigate = useNavigate();
@@ -27,8 +31,16 @@ const AdminPanel = () => {
       <section className={s.content}>
         <h3>Panel de control</h3>
         <div className={s.data}>
-          {dataToShow === "planes" && <PlanesData />}
-          {dataToShow === "consultas" && <ConsultasData />}
+          {dataToShow === "planes" && (
+            <Suspense fallback={<Loader />}>
+              <PlanesData />
+            </Suspense>
+          )}
+          {dataToShow === "consultas" && (
+            <Suspense fallback={<Loader />}>
+              <ConsultasData />
+            </Suspense>
+          )}
           {dataToShow === "perfil" && <section>Admin Data</section>}
         </div>
       </section>
