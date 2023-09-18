@@ -16,14 +16,16 @@ const PlanesData = () => {
       {planes.length !== 0 ? (
         planes?.map((plan) => {
           return (
-            <DataCard
-              key={plan.id}
-              id={plan.id}
-              name={plan.name}
-              price={plan.price}
-              speed={plan.speed}
-              detail={plan.detail}
-            />
+            <div class="planCard">
+              <DataCard
+                key={plan.id}
+                id={plan.id}
+                name={plan.name}
+                price={plan.price}
+                speed={plan.speed}
+                detail={plan.detail}
+              />
+            </div>
           );
         })
       ) : (

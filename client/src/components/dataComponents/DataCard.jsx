@@ -13,7 +13,7 @@ const DataCard = ({
   speed,
   detail,
 }) => {
-  const [showMoldal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const [infoToPatch, setInfoToPatch] = useState({});
 
   const handleChange = (e) => {
@@ -51,54 +51,84 @@ const DataCard = ({
   };
 
   return (
-    <div className={s.card}>
-      <h4>Nombre: {name}</h4>
-      <p>ID: {id}</p>
-      <h6>{price ? `Precio: $ ${price}` : `Telefono ${phone}`}</h6>
-      <h6>{speed ? `Velocidad: ${speed}` : `Correo: ${email}`}</h6>
-      <h6>{detail ? `Detalle: ${detail}` : `Mensaje: ${message}`}</h6>
-      {price ? (
-        <button onClick={() => setShowModal(!showMoldal)}>Editar</button>
-      ) : (
-        <button onClick={() => handleDeleteConsulta(id)}>Eliminar</button>
-      )}
+    <>
+      <div className={`card ${s.card}`}>
+        <h5 className="card-header">{name}</h5>
+        <div className="card-body">
+          <h6 className="card-subtitle mb-2 text-body-secondary">ID:{id}</h6>
+          <p className="card-text">
+            {price ? `Precio: $ ${price}` : `Telefono: ${phone}`}
+          </p>
+          <p className="card-text">
+            {speed ? `Velocidad: ${speed}` : `Correo: ${email}`}
+          </p>
+          <p className="card-text">
+            {detail ? `Detalle: ${detail}` : `Mensaje: ${message}`}
+          </p>
+          {price ? (
+            <button
+              type="button"
+              className={`btn ${showModal ? "btn-danger" : "btn-primary"}`}
+              onClick={() => setShowModal(!showModal)}
+            >
+              Editar
+            </button>
+          ) : (
+            <button
+              className="btn btn-danger"
+              onClick={() => handleDeleteConsulta(id)}
+            >
+              Eliminar
+            </button>
+          )}
+        </div>
 
-      <>
-        {showMoldal ? (
-          <form onSubmit={(e) => onSubmit(e, id, infoToPatch)}>
-            <input
-              onChange={handleChange}
-              value={infoToPatch.name}
-              name="name"
-              type="text"
-              placeholder="Nombre"
-            />
-            <input
-              onChange={handleChange}
-              value={infoToPatch.price}
-              name="price"
-              type="number"
-              placeholder="Precio"
-            />
-            <input
-              onChange={handleChange}
-              value={infoToPatch.speed}
-              name="speed"
-              type="text"
-              placeholder="Velocidad"
-            />
-            <input
-              onChange={handleChange}
-              value={infoToPatch.detail}
-              name="detail"
-              type="text"
-              placeholder="Detalle"
-            />
-            <button>Actualizar</button>
-          </form>
-        ) : null}
-      </>
-    </div>
+        <>
+          {showModal ? (
+            <form
+              className={s.form}
+              onSubmit={(e) => onSubmit(e, id, infoToPatch)}
+            >
+              <input
+                onChange={handleChange}
+                // value={infoToPatch.name}
+                name="name"
+                type="text"
+                placeholder="Nombre"
+                className="form-control"
+              />
+              <input
+                onChange={handleChange}
+                // value={infoToPatch.price}
+                name="price"
+                type="number"
+                placeholder="Precio"
+                className="form-control"
+              />
+              <input
+                onChange={handleChange}
+                // value={infoToPatch.speed}
+                name="speed"
+                type="text"
+                placeholder="Velocidad"
+                className="form-control"
+              />
+              <input
+                onChange={handleChange}
+                // value={infoToPatch.detail}
+                name="detail"
+                type="text"
+                placeholder="Detalle"
+                className="form-control"
+              />
+              <button type="submit" className="btn btn-primary">
+                Actualizar
+              </button>
+            </form>
+          ) : null}
+        </>
+      </div>
+    </>
   );
 };
 
