@@ -1,6 +1,15 @@
 .card {
-    padding: 1rem;
+    width: 100%;
     margin: 1rem;
     border-radius: 10px;
-    background-color: #3d5dac90;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+}
+
+.form button {
+    margin: 5px 0;
 }
