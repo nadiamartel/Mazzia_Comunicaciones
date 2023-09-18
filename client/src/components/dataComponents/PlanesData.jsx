@@ -16,9 +16,8 @@ const PlanesData = () => {
       {planes.length !== 0 ? (
         planes?.map((plan) => {
           return (
-            <div class="planCard">
+            <div key={plan.id} className="planCard">
               <DataCard
-                key={plan.id}
                 id={plan.id}
                 name={plan.name}
                 price={plan.price}

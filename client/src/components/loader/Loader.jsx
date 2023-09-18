@@ -3,7 +3,7 @@ import s from "./Loader.module.css";
 const Loader = () => {
   return (
     <>
-      <span class={s.loader}></span>
+      <span className={s.loader}></span>
     </>
   );
 };
