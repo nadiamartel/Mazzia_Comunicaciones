@@ -135,9 +135,9 @@ const ContactoView = () => {
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27852.085166275956!2d-61.77362758622207!3d-29.23794518869766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94364bbedf0d1245%3A0x435a8f192a243497!2sTostado%2C%20Santa%20Fe!5e0!3m2!1ses!2sar!4v1692751469527!5m2!1ses!2sar"
             height="450"
-            allowfullscreen=""
+            allowFullScreen=""
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
+            referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
           <p>Tostado, Santa Fe, Argentina</p>
         </section>

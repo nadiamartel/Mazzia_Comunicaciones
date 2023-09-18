@@ -5,7 +5,6 @@ const ServicioCard = ({ card, index }) => {
   const [shouldAnimate, setShouldAnimate] = useState(false);
 
   useEffect(() => {
-    console.log(index);
     const handleScroll = () => {
       const cardPosition = document
         .querySelector(`.${s.card}`)
