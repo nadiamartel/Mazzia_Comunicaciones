@@ -16,6 +16,17 @@
 
 .form button {
   width: 50%;
+  background-color: #3d5dac;
+  color: #fff;
+}
+
+.form button:hover {
+  background-color: #fff;
+  color: #3d5dac;
+}
+
+.error {
+  color: #ec5353;
 }
 
 @media (max-width: 650px) {
