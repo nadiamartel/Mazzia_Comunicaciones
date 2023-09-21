@@ -3,6 +3,9 @@ import s from "./DataCard.module.css";
 import patchPlan from "./patchPlan";
 import deleteConsulta from "./deleteConsulta";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const DataCard = ({
   id,
   name,
@@ -24,30 +27,41 @@ const DataCard = ({
     });
   };
 
+  //Handler de actualizacion de planes
   const onSubmit = async (e, id, data) => {
     e.preventDefault();
-    const response = await patchPlan(id, data);
+    const response = await toast.promise(patchPlan(id, data), {
+      pending: "Actializando plan",
+    });
 
     if (response?.name) {
-      alert(`Se ha actualizado el plan con id:${id}`);
-      window.location.reload();
+      toast.success(`El plan con id:${id}, se ha actualizado correctamente`);
+
+      setTimeout(() => {
+        window.location.reload();
+      }, 5000);
       return;
     }
 
-    alert(response.error);
-    // setInfoToPatch({});
+    toast.error(response.error);
   };
 
+  // Handler de eliminacion de consulta
   const handleDeleteConsulta = async (id) => {
-    const response = await deleteConsulta(id);
+    const response = await toast.promise(deleteConsulta(id), {
+      pending: "Eliminando consulta",
+    });
 
     if (response?.name) {
-      alert(`La consulta con id: ${id}, se ha eliminado correctamente`);
-      window.location.reload();
+      toast.success(`La consulta con id: ${id}, se ha eliminado correctamente`);
+
+      setTimeout(() => {
+        window.location.reload();
+      }, 5000);
       return;
     }
 
-    alert(response.error);
+    toast.error(response.error);
   };
 
   return (
@@ -128,6 +142,18 @@ const DataCard = ({
           ) : null}
         </>
       </div>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable={false}
+        pauseOnHover={false}
+        theme="light"
+      />
     </>
   );
 };
