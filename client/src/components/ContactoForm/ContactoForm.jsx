@@ -3,6 +3,9 @@ import s from "./ContactoForm.module.css";
 import postConsulta from "./postConsulta";
 import { validateConsulta } from "./contactoValidation";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const ContactoForm = () => {
   const [consulta, setConsulta] = useState({
     name: "",
@@ -31,8 +34,13 @@ const ContactoForm = () => {
     e.preventDefault();
     // alert("habilitado");
 
-    const respone = await postConsulta(consulta);
-    //Toast
+    const response = await toast.promise(postConsulta(consulta), {
+      pending: "Registrando tu consulta",
+    });
+
+    response?.name
+      ? toast.success("Consulta Registrada")
+      : toast.error("Lo siento, ha ocurrido un error al registrar tu consulta");
 
     setConsulta({
       name: "",
@@ -81,6 +89,18 @@ const ContactoForm = () => {
       <button disabled={consulta.name.length == 0 || errors ? true : false}>
         Enviar
       </button>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable={false}
+        pauseOnHover={false}
+        theme="light"
+      />
     </form>
   );
 };
