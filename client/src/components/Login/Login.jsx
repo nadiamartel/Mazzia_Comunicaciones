@@ -3,6 +3,9 @@ import s from "./Login.module.css";
 import postLogin from "./postLogin";
 import { useNavigate } from "react-router-dom";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const login = () => {
   const navigate = useNavigate();
   const [userData, setUserData] = useState({
@@ -21,8 +24,14 @@ const login = () => {
 
   const handleSubmitLogin = async (e) => {
     e.preventDefault();
-    const response = await postLogin(userData);
+    // async fn:  valicacion de usuario
+    const response = await toast.promise(postLogin(userData), {
+      pending: "Validando",
+    });
+
+    // Si se valida correctamente
     if (response.access) {
+      // Guradamos el token en localStorage
       window.localStorage.setItem(
         "session",
         JSON.stringify({
@@ -30,11 +39,18 @@ const login = () => {
           token: response.token,
         })
       );
+      //Notificamos al usuario su ingreso
+      toast.success("Validado correctamente");
+
+      //Lo redireccionamos al panel de administrador
       navigate("/admin");
+
+      //cortamos la ejecucion
       return;
     }
 
-    alert("No se pudo iniciar sesion"); // Cambiar por un toast luego
+    //En caso de validacion incorrecta, notificamos al usuario
+    toast.warn("Verifique su correo y contrasena");
   };
 
   return (
@@ -61,6 +77,18 @@ const login = () => {
           <button>Iniciar sesion</button>
         </form>
       </section>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable={false}
+        pauseOnHover={false}
+        theme="light"
+      />
     </div>
   );
 };
