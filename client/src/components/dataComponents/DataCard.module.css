@@ -1,15 +1,35 @@
 .card {
-    width: 100%;
-    margin: 1rem;
-    border-radius: 10px;
+  width: 100%;
+  margin: 1rem;
+  border-radius: 10px;
+  transition: .3s ease all;
+}
+
+.card_body {
+  width: 18rem;
+  overflow: auto;
+}
+
+.card:hover {
+  border: 1px solid #000;
+}
+
+span {
+    font-weight: bold;
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
-    padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
 }
 
 .form button {
-    margin: 5px 0;
+  margin: 5px 0;
+}
+
+@media (max-width: 650px) {
+  .card {
+    width: 15rem;
+  }
 }

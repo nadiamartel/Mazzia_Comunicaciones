@@ -1,6 +1,8 @@
+import { SERVER_URI } from "../../services/constants"
+
 const postConsulta = async (data) => {
   try {
-    const response = await fetch("http://localhost:3001/consultas", {
+    const response = await fetch(`${SERVER_URI}/consultas`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
