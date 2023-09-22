@@ -68,21 +68,27 @@ const DataCard = ({
     <>
       <div className={`card ${s.card}`}>
         <h5 className="card-header">{name}</h5>
-        <div className="card-body">
+        <div className={`card-body ${s.card_body}`}>
           <h6 className="card-subtitle mb-2 text-body-secondary">ID:{id}</h6>
+
           <p className="card-text">
-            {price ? `Precio: $ ${price}` : `Telefono: ${phone}`}
+            {price ? <><span>Precio:</span> $ {price}</> 
+                   : <><span>Telefono:</span>{phone}</>}
           </p>
+
           <p className="card-text">
-            {speed ? `Velocidad: ${speed}` : `Correo: ${email}`}
+            {speed ? <><span>Velocidad:</span> {speed}</> 
+                   : <><span>Correo:</span>{email}</>}
           </p>
+          
           <p className="card-text">
-            {detail ? `Detalle: ${detail}` : `Mensaje: ${message}`}
+            {detail ? <><span>Detalle:</span>{detail}</> 
+                    : <><span>Mensaje:</span>{message}</>}
           </p>
           {price ? (
             <button
               type="button"
-              className={`btn ${showModal ? "btn-danger" : "btn-primary"}`}
+              className={`btn ${showModal ? "btn-danger" :  "btn-primary"}`}
               onClick={() => setShowModal(!showModal)}
             >
               Editar
